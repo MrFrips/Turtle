@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
@@ -31,7 +32,9 @@ namespace Turtle
                 //Фильтра для файла↓
                 openFileDialog.Filter = ("Текстовый Документ (*.txt)|*.txt");
                 openFileDialog.InitialDirectory = ("C:\\Users\\portt\\Desktop");
-                openFileDialog.FilterIndex = 2; 
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.Title = ("Открыть файлик!");
+                openFileDialog.FileName = ("turtle.in");
                 openFileDialog.RestoreDirectory = true;
                 //Откртытие Диолога↓
                 if (openFileDialog.ShowDialog() == DialogResult.Cancel)
@@ -56,6 +59,8 @@ namespace Turtle
                     saveFileDialog.Filter = ("Текстовый Документ (*.txt)|*.txt");
                     saveFileDialog.InitialDirectory = ("C:\\Users\\portt\\Desktop");
                     saveFileDialog.FilterIndex = 2;
+                    saveFileDialog.Title = ("Открыть файлик!");
+                    saveFileDialog.FileName = ("turtle.out");
                     saveFileDialog.RestoreDirectory = true;
                     //Откртытие Диолога↓
                     if (saveFileDialog.ShowDialog() == DialogResult.Cancel)

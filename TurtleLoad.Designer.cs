@@ -53,6 +53,7 @@
             this.ProgresTurtleBar.Name = "ProgresTurtleBar";
             this.ProgresTurtleBar.Size = new System.Drawing.Size(242, 23);
             this.ProgresTurtleBar.TabIndex = 1;
+            this.ProgresTurtleBar.Click += new System.EventHandler(this.ProgresTurtleBar_Click);
             // 
             // TurtleTimer
             // 

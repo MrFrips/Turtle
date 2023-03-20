@@ -55,5 +55,10 @@ namespace Turtle
             Notify_Done.BalloonTipText = "Программа завершила расчёт!";
             Notify_Done.ShowBalloonTip(1000);
         }
+
+        private void ProgresTurtleBar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
