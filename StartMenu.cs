@@ -81,7 +81,7 @@ namespace Turtle
         }
         private void ColorWhite(object sender, EventArgs e)
         {
-            OutResult.BackColor = Color.White;
+            OutResult.BackColor = Color.FromArgb(76,76,76);
         }
         //Выход?↓
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -147,30 +147,43 @@ namespace Turtle
             AllTimer.Stop();
         }
 
-        //туть работа с DragAndDrop ↓
-        private void DragAndDropPanel_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                textAboutFile.Text = ("Вы можете отпустить файл...");
-                e.Effect = DragDropEffects.Copy;
-            }
-        }
-        private void DragAndDropPanel_DragLeave(object sender, EventArgs e)
-        {
-            textAboutFile.Text = ("Можно переместить файл сюда.");
-        }
-        private void DragAndDropPanel_DragDrop(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            InfoFile.Text = files[0];
-        }
+        //туть работа с DragAndDrop ↓  +172 Строка в Desinger
+        //private void DragAndDropPanel_DragEnter(object sender, DragEventArgs e)
+        //{
+        //    if (e.Data.GetDataPresent(DataFormats.FileDrop))
+        //    {
+        //        textAboutFile.Text = ("Вы можете отпустить файл...");
+        //        e.Effect = DragDropEffects.Copy;
+        //    }
+        //}
+        //private void DragAndDropPanel_DragLeave(object sender, EventArgs e)
+        //{
+        //    textAboutFile.Text = ("Можно переместить файл сюда.");
+        //}
+        //private void DragAndDropPanel_DragDrop(object sender, DragEventArgs e)
+        //{
+        //    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+        //    InfoFile.Text = files[0];
+        //}
 
         private void go_Click(object sender, EventArgs e)
         {
             //КОД Проги гыгыг
             TurtleLoad f = new TurtleLoad();
             f.ShowDialog();
+            string text = InfoFile.Text;
+
+            string[] words = text.Split(new char[] { ':',' ' });
+            // new char[] - массив символов-разделителей. Как меня поправили в 
+            // комментариях, в данном случае достаточно написать text.Split(':')
+
+            //string s1 = words[0];
+            //string s2 = words[1];
+            //string s3 = words[2];
+            //string s4 = words[3];
+            //string s5 = words[4];
+            //string s6 = words[5];
+
             //string secondLine;
             //using (var reader = new StreamReader("MyTextFile.txt"))
             //{

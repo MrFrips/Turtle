@@ -149,6 +149,7 @@
             this.OutResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.OutResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OutResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.OutResult.ForeColor = System.Drawing.Color.White;
             this.OutResult.Location = new System.Drawing.Point(130, 391);
             this.OutResult.Name = "OutResult";
             this.OutResult.Size = new System.Drawing.Size(100, 26);
@@ -167,9 +168,9 @@
             this.DragAndDropPanel.Name = "DragAndDropPanel";
             this.DragAndDropPanel.Size = new System.Drawing.Size(258, 159);
             this.DragAndDropPanel.TabIndex = 10;
-            this.DragAndDropPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragAndDropPanel_DragDrop);
-            this.DragAndDropPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragAndDropPanel_DragEnter);
-            this.DragAndDropPanel.DragLeave += new System.EventHandler(this.DragAndDropPanel_DragLeave);
+            //this.DragAndDropPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragAndDropPanel_DragDrop);
+            //this.DragAndDropPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragAndDropPanel_DragEnter);
+            //this.DragAndDropPanel.DragLeave += new System.EventHandler(this.DragAndDropPanel_DragLeave);
             // 
             // textAboutFile
             // 
