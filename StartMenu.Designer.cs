@@ -135,9 +135,9 @@
             this.InfoFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.InfoFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.InfoFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InfoFile.ForeColor = System.Drawing.Color.White;
             this.InfoFile.Location = new System.Drawing.Point(0, 305);
             this.InfoFile.Name = "InfoFile";
-            this.InfoFile.ReadOnly = true;
             this.InfoFile.Size = new System.Drawing.Size(124, 112);
             this.InfoFile.TabIndex = 8;
             this.InfoFile.Text = "";
@@ -168,9 +168,6 @@
             this.DragAndDropPanel.Name = "DragAndDropPanel";
             this.DragAndDropPanel.Size = new System.Drawing.Size(258, 159);
             this.DragAndDropPanel.TabIndex = 10;
-            //this.DragAndDropPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.DragAndDropPanel_DragDrop);
-            //this.DragAndDropPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragAndDropPanel_DragEnter);
-            //this.DragAndDropPanel.DragLeave += new System.EventHandler(this.DragAndDropPanel_DragLeave);
             // 
             // textAboutFile
             // 

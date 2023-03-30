@@ -34,6 +34,8 @@
             this.ProgresTurtleBar = new System.Windows.Forms.ProgressBar();
             this.TurtleTimer = new System.Windows.Forms.Timer(this.components);
             this.Notify_Done = new System.Windows.Forms.NotifyIcon(this.components);
+            this.DotsTim = new System.Windows.Forms.Timer(this.components);
+            this.LoadText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,16 +66,32 @@
             this.Notify_Done.Text = "NoitfyForU";
             this.Notify_Done.Visible = true;
             // 
+            // DotsTim
+            // 
+            this.DotsTim.Tick += new System.EventHandler(this.DotsTim_Tick);
+            // 
+            // LoadText
+            // 
+            this.LoadText.AutoSize = true;
+            this.LoadText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoadText.ForeColor = System.Drawing.Color.White;
+            this.LoadText.Location = new System.Drawing.Point(85, 173);
+            this.LoadText.Name = "LoadText";
+            this.LoadText.Size = new System.Drawing.Size(85, 20);
+            this.LoadText.TabIndex = 2;
+            this.LoadText.Text = "Загрузка";
+            // 
             // TurtleLoad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(266, 179);
+            this.ClientSize = new System.Drawing.Size(266, 203);
+            this.Controls.Add(this.LoadText);
             this.Controls.Add(this.ProgresTurtleBar);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(266, 179);
+            this.MaximumSize = new System.Drawing.Size(266, 203);
             this.MinimumSize = new System.Drawing.Size(266, 179);
             this.Name = "TurtleLoad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -83,6 +101,7 @@
             this.Load += new System.EventHandler(this.TurtleLoad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -92,5 +111,7 @@
         private System.Windows.Forms.ProgressBar ProgresTurtleBar;
         private System.Windows.Forms.Timer TurtleTimer;
         private System.Windows.Forms.NotifyIcon Notify_Done;
+        private System.Windows.Forms.Timer DotsTim;
+        private System.Windows.Forms.Label LoadText;
     }
 }

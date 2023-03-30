@@ -25,8 +25,9 @@ namespace Turtle
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Image = Image.FromFile("C:\\Users\\portt\\Pictures\\For-C#\\turtle.gif");
             TurtleTimer.Start();
+            DotsTim.Start();
+            DotsTim.Interval = 600;
         }
-        int numDots = 1;
 
         private async void TurtleTimer_Tick(object sender, EventArgs e)
         {
@@ -59,6 +60,15 @@ namespace Turtle
         private void ProgresTurtleBar_Click(object sender, EventArgs e)
         {
 
+        }
+        int numDots = 1;
+        private void DotsTim_Tick(object sender, EventArgs e)
+        {
+            string dots = "";
+            for (int idx = 1; idx <= numDots; ++idx) dots += ".";
+            LoadText.Text = $"Загрузка" + dots;
+            numDots++;
+            if (numDots > 3) numDots = 1;
         }
     }
 }

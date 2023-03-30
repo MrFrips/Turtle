@@ -23,6 +23,7 @@ namespace Turtle
             InitializeComponent();
             AllTimer.Interval = 10000;
             AllTimer.Start();
+            свойВариантToolStripMenuItem.Enabled = false;
         }
         private void открытьФайлToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -87,7 +88,7 @@ namespace Turtle
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult vibor = MessageBox.Show("Вы точно хотите выйти?", "Уверенны?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (vibor == DialogResult.Yes) { Close(); } else { MessageBox.Show("Окей", "Отмена закрывания!", MessageBoxButtons.OK, MessageBoxIcon.Question); }
+            if (vibor == DialogResult.Yes) { Close(); } else {  }
         }
         //Developer↓
         private void ктоРазработчикToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,22 +99,6 @@ namespace Turtle
         //Нажатие на Strip Меню↓
         private void StripMenu_Click(object sender, EventArgs e)
         {
-            //if (ClickCheck = true)
-            //{
-            //    HelpMePlz.Text = "Молодец!";
-            //    //wait
-            //    HelpMePlz.Text = "Хорошая работа!";
-            //    ClickCheck = false;
-            //    AllTimer.Start();
-            //}
-            //else
-            //{
-            //    HelpMePlz.Text = "Wait";
-            //    //wait(70000);
-            //    HelpMePlz.Text = "Если что то не поняно, ты всегда можешь нажать на кнопку снова!";
-            //    //wait(3000);
-            //    HelpMePlz.Text = "← Кнопка классная, нажимай смелее!";
-            //}
             AllTimer.Stop();
         }
         private void StripMenu_MouseLeave(object sender, EventArgs e)
@@ -127,18 +112,14 @@ namespace Turtle
         {
             var msgs = new string[] { "← Кнопка классная, нажимай смелее!", "Поставишь 5 ★★★★★ в рейтинг?", 
                 "Прошу не ★☆☆☆☆ 1 звезду...", "А ты знал что текст обновляеться каждые 10сек?", 
-                "Если что то не поняно, ты всегда можешь нажать на кнопку снова!", "←", "Эта информация вообще полезна?", };
+                "Если что то не поняно, ты всегда можешь нажать на кнопку снова!", "←" };
             HelpMePlz.Text = numMsg < msgs.Length ? msgs[numMsg] : "";
             numMsg++;
-            //Не робит((
-            //if (time == 0) AllTimer.Stop();
-            //int time = Convert.ToInt32(HelpMePlz.Text);
-            //HelpMePlz.Text = Convert.ToString(time - 1);
         }
         //Потверждение о выходе↓.
         private void свойВариантToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult vibor = MessageBox.Show("Что?\nЭто всё ещё в разроботке, " +
+            DialogResult = MessageBox.Show("Что?\nЭто всё ещё в разроботке, " +
                 "слишком рано нажали,\nнажмите на эту кнопку позже",
                 "What the heck is that?", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
@@ -168,7 +149,7 @@ namespace Turtle
 
         private void go_Click(object sender, EventArgs e)
         {
-            //КОД Проги гыгыг
+            //Основной код
             TurtleLoad f = new TurtleLoad();
             f.ShowDialog();
             string text = InfoFile.Text;
@@ -203,10 +184,7 @@ namespace Turtle
             {
                 InOutPutDataError.SetError(InfoFile, "Нe может быть пустым!");
             }
-            //else if (InfoFile.Text.Length < 4)
-            //{
-            //    InOutPutDataError.SetError(InfoFile, "Слишком короткое имя!");
-            //}
+
             else
             {
                 InOutPutDataError.Clear();
