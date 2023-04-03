@@ -40,11 +40,18 @@ namespace Turtle
                 //Откртытие Диолога↓
                 if (openFileDialog.ShowDialog() == DialogResult.Cancel)
                 return;
-                ProgressBars f = new ProgressBars();
-                f.ShowDialog();
-                //получаем выбранный файл↓
+                //Получаем выбранный файл↓
                 string filename = openFileDialog.FileName;
                 string fileText = System.IO.File.ReadAllText(filename);
+                if (fileText == string.Empty)
+                {
+                    MessageBox.Show("Файл пуст, прошу провете данный файл\n" +
+                        "Возможно он повреждён, или выберете другой файл...", "Ouppss...", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
+                //Загрузка↓
+                ProgressBars f = new ProgressBars();
+                f.ShowDialog();
                 //Запись в текстбокс↓
                 InfoFile.Text = fileText;
             }
@@ -175,7 +182,8 @@ namespace Turtle
 
         private void MainForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show("Справка по данному полю проста\nТуть вам предстоит наблюдать класивую картну\nЧто-бы познать мир...","HelpMen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Справка по данному полю проста\nТуть вам предстоит наблюдать класивую картину\n" +
+                "Что-бы познать мир...","HelpMen", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //Help.ShowPopup(HelpMenu, hlpevent);
         }
         private void InfoFile_TextChanged(object sender, EventArgs e)
