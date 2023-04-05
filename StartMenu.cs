@@ -165,7 +165,9 @@ namespace Turtle
                 // Считываем данные из TextBox и разбиваем их на массив строк
                 string[] inputLines = InfoFile.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
-                // Считываем vmax и d из первой строки
+                /// Считываем vmax и d из первой строки
+                /// VMAx - Мах Скорость черепахи в См\сек.
+                /// d - Расстояние в метрах 
                 string[] vd = inputLines[0].Split(' ');
                 int vmax = int.Parse(vd[0]);
                 int d = int.Parse(vd[1]);
