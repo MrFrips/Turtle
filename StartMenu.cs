@@ -156,28 +156,62 @@ namespace Turtle
 
         private void go_Click(object sender, EventArgs e)
         {
-            //Основной код
-            TurtleLoad f = new TurtleLoad();
-            f.ShowDialog();
-            string text = InfoFile.Text;
+            if (!string.IsNullOrEmpty(InfoFile.Text))
+            {
+                //Основной код
+                TurtleLoad f = new TurtleLoad();
+                f.ShowDialog();
 
-            string[] words = text.Split(new char[] { ':',' ' });
-            // new char[] - массив символов-разделителей. Как меня поправили в 
-            // комментариях, в данном случае достаточно написать text.Split(':')
+                // Считываем данные из TextBox и разбиваем их на массив строк
+                string[] inputLines = InfoFile.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
-            //string s1 = words[0];
-            //string s2 = words[1];
-            //string s3 = words[2];
-            //string s4 = words[3];
-            //string s5 = words[4];
-            //string s6 = words[5];
+                // Считываем vmax и d из первой строки
+                string[] vd = inputLines[0].Split(' ');
+                int vmax = int.Parse(vd[0]);
+                int d = int.Parse(vd[1]);
 
-            //string secondLine;
-            //using (var reader = new StreamReader("MyTextFile.txt"))
-            //{
-            //    reader.ReadLine(); // чтобы пропустить одну строку
-            //    secondLine = reader.ReadLine();  // записываем в переменную
-            //}
+                // Считываем количество одуванчиков из второй строки
+                int n = int.Parse(inputLines[1]);
+
+                // Создаем массив структур для хранения информации об одуванчиках
+                var dandelions = new (int x, TimeSpan t)[n];
+
+                // Считываем информацию об одуванчиках из оставшихся строк
+                for (int i = 0; i < n; i++)
+                {
+                    string[] line = inputLines[i + 2].Split(' ');
+                    int x = int.Parse(line[0]);
+                    TimeSpan t = TimeSpan.ParseExact(line[1], @"mm\:ss", CultureInfo.InvariantCulture);
+                    dandelions[i] = (x, t);
+                }
+
+                // Сортируем одуванчики по времени прорастания
+                dandelions = dandelions.OrderBy(dan => dan.t).ToArray();
+
+                // Вычисляем время, за которое черепаха съест все одуванчики
+                double time = 0;
+                int currentPos = 0;
+                foreach (var dan in dandelions)
+                {
+                    int distance = dan.x - currentPos;
+                    double eatingTime = distance / (double)vmax + dan.t.TotalMinutes - time;
+                    time += eatingTime;
+                    currentPos = dan.x;
+                }
+
+                // Вычисляем время, за которое черепаха вернется домой
+                time += currentPos / (double)vmax;
+
+                // Выводим результат в TextBox
+                OutResult.Text = TimeSpan.FromMinutes(Math.Ceiling(time)).ToString("hh\\:mm");
+            }
+            else
+            {
+                InfoFile.BackColor = Color.Red;
+                MessageBox.Show("Проблема в том что вы захотели запустить программу без данных!\n" +
+                    "Прошу введите данные в Строчку!","Ooupsss...",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void MainForm_HelpRequested(object sender, HelpEventArgs hlpevent)
@@ -197,6 +231,10 @@ namespace Turtle
             {
                 InOutPutDataError.Clear();
             }
+        }
+        private void InfoFile_MouseEnter(object sender, EventArgs e)
+        {
+            InfoFile.BackColor = Color.FromArgb(76, 76, 76);
         }
         private void OutResult_TextChanged(object sender, EventArgs e)
         {

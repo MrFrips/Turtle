@@ -142,17 +142,19 @@
             this.InfoFile.TabIndex = 8;
             this.InfoFile.Text = "";
             this.InfoFile.TextChanged += new System.EventHandler(this.InfoFile_TextChanged);
+            this.InfoFile.MouseEnter += new System.EventHandler(this.InfoFile_MouseEnter);
             // 
             // OutResult
             // 
             this.OutResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.OutResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.OutResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OutResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.OutResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F);
             this.OutResult.ForeColor = System.Drawing.Color.White;
-            this.OutResult.Location = new System.Drawing.Point(130, 391);
+            this.OutResult.Location = new System.Drawing.Point(130, 379);
+            this.OutResult.Multiline = true;
             this.OutResult.Name = "OutResult";
-            this.OutResult.Size = new System.Drawing.Size(100, 26);
+            this.OutResult.Size = new System.Drawing.Size(259, 38);
             this.OutResult.TabIndex = 9;
             this.OutResult.TextChanged += new System.EventHandler(this.OutResult_TextChanged);
             this.OutResult.MouseEnter += new System.EventHandler(this.ColorWhite);
