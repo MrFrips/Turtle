@@ -211,7 +211,6 @@ namespace Turtle
                 MessageBox.Show("Проблема в том что вы захотели запустить программу без данных!\n" +
                     "Прошу введите данные в Строчку!","Ooupsss...",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void MainForm_HelpRequested(object sender, HelpEventArgs hlpevent)
