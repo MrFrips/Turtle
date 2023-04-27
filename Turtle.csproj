@@ -75,6 +75,13 @@
     <Compile Include="Developer.Designer.cs">
       <DependentUpon>Developer.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoFromKeyboard.cs" />
+    <Compile Include="KeyBoardIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeyBoardIn.Designer.cs">
+      <DependentUpon>KeyBoardIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProgressBars.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +105,9 @@
     <EmbeddedResource Include="Developer.resx">
       <DependentUpon>Developer.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeyBoardIn.resx">
+      <DependentUpon>KeyBoardIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBars.resx">
       <DependentUpon>ProgressBars.cs</DependentUpon>

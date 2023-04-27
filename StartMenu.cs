@@ -23,7 +23,9 @@ namespace Turtle
             InitializeComponent();
             AllTimer.Interval = 10000;
             AllTimer.Start();
-            свойВариантToolStripMenuItem.Enabled = false;
+            СклавыToolStripMenuItem.Enabled = true;
+            InData.Enabled = false;
+            OutData.Enabled = false;
         }
         private void открытьФайлToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -55,6 +57,9 @@ namespace Turtle
                 //Запись в текстбокс↓
                 InfoFile.Text = fileText;
             }
+            InfoFromKeyboard.KeyBoardInfo = InfoFile.Text;
+            KeyBoardIn f1 = new KeyBoardIn();
+            f1.ShowDialog();
         }
         //Сохранение файла↓
         private void сохранитьФайлToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,11 +129,17 @@ namespace Turtle
             numMsg++;
         }
         //Потверждение о выходе↓.
-        private void свойВариантToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СклавыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult = MessageBox.Show("Что?\nЭто всё ещё в разроботке, " +
-                "слишком рано нажали,\nнажмите на эту кнопку позже",
-                "What the heck is that?", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            InfoFromKeyboard.KeyBoardInfo = InfoFile.Text;
+            InfoFile.Clear();
+            KeyBoardIn f = new KeyBoardIn();
+            f.ShowDialog();
+            InfoFile.Text = InfoFromKeyboard.KeyBoardInfo;
+            InfoFile.Refresh();
+            //DialogResult = MessageBox.Show("Что?\nЭто всё ещё в разроботке, " +
+            //    "слишком рано нажали,\nнажмите на эту кнопку позже",
+            //    "What the heck is that?", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
         private void StripMenuDown(object sender, EventArgs e)
         {
@@ -165,12 +176,12 @@ namespace Turtle
                 // Считываем данные из TextBox и разбиваем их на массив строк
                 string[] inputLines = InfoFile.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
-                /// Считываем vmax и d из первой строки
+                /// Считываем vmax и t_1 из первой строки
                 /// VMAx - Мах Скорость черепахи в См\сек.
-                /// d - Расстояние в метрах 
+                /// t_1 - Время в минутах, затрачиваемое черепахой на поедание одного одуванчика
                 string[] vd = inputLines[0].Split(' ');
                 int vmax = int.Parse(vd[0]);
-                int d = int.Parse(vd[1]);
+                double t_1 = double.Parse(vd[1]);
 
                 // Считываем количество одуванчиков из второй строки
                 int n = int.Parse(inputLines[1]);
@@ -197,8 +208,10 @@ namespace Turtle
                 {
                     int distance = dan.x - currentPos;
                     double eatingTime = distance / (double)vmax + dan.t.TotalMinutes - time;
-                    time += eatingTime;
-                    currentPos = dan.x;
+                    time += eatingTime * t_1;
+                    time += dan.t.TotalMinutes - eatingTime;
+                    //time += eatingTime * t_1;
+                    //currentPos = dan.x;
                 }
 
                 // Вычисляем время, за которое черепаха вернется домой
@@ -206,6 +219,7 @@ namespace Turtle
 
                 // Выводим результат в TextBox
                 OutResult.Text = TimeSpan.FromMinutes(Math.Ceiling(time)).ToString("hh\\:mm");
+                //OutResult.Text += ("m");
             }
             else
             {
@@ -251,6 +265,11 @@ namespace Turtle
             {
                 InOutPutDataError.Clear();
             }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
