@@ -34,8 +34,8 @@
             this.HelpMenu = new System.Windows.Forms.ToolStrip();
             this.StripMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.открытьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.СклавыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ктоРазработчикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Separator = new System.Windows.Forms.ToolStripSeparator();
@@ -90,19 +90,19 @@
             this.открытьФайлToolStripMenuItem.Text = "Открыть Файл?";
             this.открытьФайлToolStripMenuItem.Click += new System.EventHandler(this.открытьФайлToolStripMenuItem_Click);
             // 
-            // сохранитьФайлToolStripMenuItem
-            // 
-            this.сохранитьФайлToolStripMenuItem.Name = "сохранитьФайлToolStripMenuItem";
-            this.сохранитьФайлToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.сохранитьФайлToolStripMenuItem.Text = "Сохранить файл?";
-            this.сохранитьФайлToolStripMenuItem.Click += new System.EventHandler(this.сохранитьФайлToolStripMenuItem_Click);
-            // 
             // СклавыToolStripMenuItem
             // 
             this.СклавыToolStripMenuItem.Name = "СклавыToolStripMenuItem";
             this.СклавыToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.СклавыToolStripMenuItem.Text = "Ввести с клавиатуры";
             this.СклавыToolStripMenuItem.Click += new System.EventHandler(this.СклавыToolStripMenuItem_Click);
+            // 
+            // сохранитьФайлToolStripMenuItem
+            // 
+            this.сохранитьФайлToolStripMenuItem.Name = "сохранитьФайлToolStripMenuItem";
+            this.сохранитьФайлToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.сохранитьФайлToolStripMenuItem.Text = "Сохранить файл?";
+            this.сохранитьФайлToolStripMenuItem.Click += new System.EventHandler(this.сохранитьФайлToolStripMenuItem_Click);
             // 
             // ктоРазработчикToolStripMenuItem
             // 
@@ -204,6 +204,7 @@
             this.InfoFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.InfoFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.InfoFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InfoFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.InfoFile.ForeColor = System.Drawing.Color.White;
             this.InfoFile.Location = new System.Drawing.Point(0, 247);
             this.InfoFile.Name = "InfoFile";

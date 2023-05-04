@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,7 +35,7 @@ namespace Turtle
             {
                 //Фильтра для файла↓
                 openFileDialog.Filter = ("Текстовый Документ (*.txt)|*.txt");
-                openFileDialog.InitialDirectory = ("C:\\Users\\portt\\Desktop");
+                openFileDialog.InitialDirectory = ("C:\\");
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.Title = ("Открыть файлик!");
                 openFileDialog.FileName = ("turtle.in");
@@ -60,7 +61,9 @@ namespace Turtle
             InfoFromKeyboard.KeyBoardInfo = InfoFile.Text;
             KeyBoardIn f1 = new KeyBoardIn();
             f1.ShowDialog();
+            InfoFile.Text = InfoFromKeyboard.KeyBoardInfo;
         }
+
         //Сохранение файла↓
         private void сохранитьФайлToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -70,9 +73,9 @@ namespace Turtle
                 {
                     //Фильтра для файла↓
                     saveFileDialog.Filter = ("Текстовый Документ (*.txt)|*.txt");
-                    saveFileDialog.InitialDirectory = ("C:\\Users\\portt\\Desktop");
+                    saveFileDialog.InitialDirectory = ("C:\\");
                     saveFileDialog.FilterIndex = 2;
-                    saveFileDialog.Title = ("Открыть файлик!");
+                    saveFileDialog.Title = ("Сохранить файлик!");
                     saveFileDialog.FileName = ("turtle.out");
                     saveFileDialog.RestoreDirectory = true;
                     //Откртытие Диолога↓
@@ -167,7 +170,12 @@ namespace Turtle
 
         private void go_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(InfoFile.Text))
+            string strfor = InfoFile.Text;
+            if (Regex.IsMatch(strfor, @"[a-zA-Z]"))
+            {
+                MessageBox.Show("Ошибка: строка содержит буквы!", "Ooupsss...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(!string.IsNullOrEmpty(InfoFile.Text))
             {
                 //Основной код
                 TurtleLoad f = new TurtleLoad();

@@ -40,7 +40,7 @@
             // 
             this.KeyBoardInfoText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.KeyBoardInfoText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.KeyBoardInfoText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.KeyBoardInfoText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.KeyBoardInfoText.ForeColor = System.Drawing.Color.White;
             this.KeyBoardInfoText.Location = new System.Drawing.Point(339, 12);
             this.KeyBoardInfoText.Name = "KeyBoardInfoText";
@@ -90,7 +90,6 @@
             this.label3.Size = new System.Drawing.Size(307, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "(Координаты одуваничков / Время когда они прорастут) →";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // KeyBoardIn
             // 

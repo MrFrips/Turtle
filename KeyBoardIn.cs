@@ -15,7 +15,7 @@ namespace Turtle
         public KeyBoardIn()
         {
             InitializeComponent();
-            KeyBoardInfoText.Clear();
+            //KeyBoardInfoText.Clear();
         }
 
         private void KeyBoardIn_FormClosing(object sender, FormClosingEventArgs e)
@@ -25,38 +25,16 @@ namespace Turtle
 
         private void KeyBoardIn_Load(object sender, EventArgs e)
         {
-            
             KeyBoardInfoText.Text = InfoFromKeyboard.KeyBoardInfo;
-        }
-
-        private void InfoString1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InfoString2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InfoString3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void SaveKeyBoardinfo_Click(object sender, EventArgs e)
         {
+            InfoFromKeyboard.KeyBoardInfo = KeyBoardInfoText.Text;
             this.Close();
         }
 
-
-
         private void KeyBoardInfoText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
         {
 
         }
