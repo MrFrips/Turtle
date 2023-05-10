@@ -47,7 +47,6 @@
             this.KeyBoardInfoText.Size = new System.Drawing.Size(167, 193);
             this.KeyBoardInfoText.TabIndex = 1;
             this.KeyBoardInfoText.Text = "";
-            this.KeyBoardInfoText.TextChanged += new System.EventHandler(this.KeyBoardInfoText_TextChanged);
             // 
             // SaveKeyBoardinfo
             // 
