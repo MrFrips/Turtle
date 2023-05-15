@@ -44,6 +44,7 @@
             this.progressBar1.Size = new System.Drawing.Size(233, 23);
             this.progressBar1.Step = 0;
             this.progressBar1.TabIndex = 0;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // ProgressTimer
             // 
