@@ -17,12 +17,14 @@ namespace Turtle
         {
             InitializeComponent();
             ProgresTurtleBar.Maximum = 2000;
-            Notify_Done.Icon = new Icon("C:\\Users\\portt\\Pictures\\For-C#\\Ico-Fox.ico");
+            //Notify_Done.Icon = new Icon ("C:\\Users\\portt\\Pictures\\For-C#\\Ico-Fox.ico");
+            //("C:\\Users\\portt\\Pictures\\For-C#\\Ico-Fox.ico");
         }
         private void TurtleLoad_Load(object sender, EventArgs e)
         {
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Image = Image.FromFile("C:\\Users\\portt\\Pictures\\For-C#\\turtle.gif");
+            pictureBox1.Image = Properties.Resources.turtle;
+            //pictureBox1.Image = Image.FromFile("C:\\Users\\portt\\Pictures\\For-C#\\turtle.gif");
             TurtleTimer.Start();
             DotsTim.Start();
             DotsTim.Interval = 600;

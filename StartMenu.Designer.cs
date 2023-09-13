@@ -139,6 +139,7 @@
             this.OutResult.Location = new System.Drawing.Point(183, 379);
             this.OutResult.Multiline = true;
             this.OutResult.Name = "OutResult";
+            this.OutResult.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.OutResult.Size = new System.Drawing.Size(259, 38);
             this.OutResult.TabIndex = 9;
             this.OutResult.TextChanged += new System.EventHandler(this.OutResult_TextChanged);
