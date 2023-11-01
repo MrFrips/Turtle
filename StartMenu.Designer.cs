@@ -213,6 +213,7 @@
             this.InfoFile.TabIndex = 8;
             this.InfoFile.Text = "";
             this.InfoFile.TextChanged += new System.EventHandler(this.InfoFile_TextChanged);
+            this.InfoFile.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InfoFile_KeyDown);
             this.InfoFile.MouseEnter += new System.EventHandler(this.InfoFile_MouseEnter);
             // 
             // MainForm

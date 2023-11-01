@@ -14,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace Turtle
 {
@@ -273,6 +274,15 @@ namespace Turtle
             {
                 InOutPutDataError.Clear();
             }
+        }
+
+        private void InfoFile_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    e.SuppressKeyPress = true;
+            //    go.PerformClick();
+            //}
         }
     }
 }
